@@ -1,0 +1,295 @@
+﻿namespace Tp1Progra3
+{
+    partial class MainMenu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblBuscarPorNombre = new System.Windows.Forms.Label();
+            this.mstMenuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.tlsArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlsAdministrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlsMarcas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlsCategorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblBuscarPor = new System.Windows.Forms.Label();
+            this.cmbBuscarArticulo = new System.Windows.Forms.ComboBox();
+            this.txtBuscarArticulo = new System.Windows.Forms.TextBox();
+            this.btnBuscarArticulo = new System.Windows.Forms.Button();
+            this.btnLimpiarFiltroArticulo = new System.Windows.Forms.Button();
+            this.lstbArticulos = new System.Windows.Forms.ListBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.BtnVerDetalle = new System.Windows.Forms.Button();
+            this.pbxImagenProducto = new System.Windows.Forms.PictureBox();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.mstMenuPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenProducto)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lblBuscarPorNombre
+            // 
+            this.lblBuscarPorNombre.AutoSize = true;
+            this.lblBuscarPorNombre.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblBuscarPorNombre.Location = new System.Drawing.Point(12, 40);
+            this.lblBuscarPorNombre.Name = "lblBuscarPorNombre";
+            this.lblBuscarPorNombre.Size = new System.Drawing.Size(118, 20);
+            this.lblBuscarPorNombre.TabIndex = 0;
+            this.lblBuscarPorNombre.Text = "Busqueda y filtros:";
+            this.lblBuscarPorNombre.UseCompatibleTextRendering = true;
+            this.lblBuscarPorNombre.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // mstMenuPrincipal
+            // 
+            this.mstMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsArchivo,
+            this.tlsAdministrar});
+            this.mstMenuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.mstMenuPrincipal.Name = "mstMenuPrincipal";
+            this.mstMenuPrincipal.Size = new System.Drawing.Size(1067, 24);
+            this.mstMenuPrincipal.TabIndex = 2;
+            this.mstMenuPrincipal.Text = "menuStrip2";
+            // 
+            // tlsArchivo
+            // 
+            this.tlsArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.tlsArchivo.Name = "tlsArchivo";
+            this.tlsArchivo.Size = new System.Drawing.Size(60, 20);
+            this.tlsArchivo.Text = "Archivo";
+            this.tlsArchivo.Click += new System.EventHandler(this.tlsArchivo_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // tlsAdministrar
+            // 
+            this.tlsAdministrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsMarcas,
+            this.tlsCategorias});
+            this.tlsAdministrar.Name = "tlsAdministrar";
+            this.tlsAdministrar.Size = new System.Drawing.Size(81, 20);
+            this.tlsAdministrar.Text = "Administrar";
+            // 
+            // tlsMarcas
+            // 
+            this.tlsMarcas.Name = "tlsMarcas";
+            this.tlsMarcas.Size = new System.Drawing.Size(180, 22);
+            this.tlsMarcas.Text = "Marcas";
+            // 
+            // tlsCategorias
+            // 
+            this.tlsCategorias.Name = "tlsCategorias";
+            this.tlsCategorias.Size = new System.Drawing.Size(180, 22);
+            this.tlsCategorias.Text = "Categorias";
+            // 
+            // lblBuscarPor
+            // 
+            this.lblBuscarPor.AutoSize = true;
+            this.lblBuscarPor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarPor.Location = new System.Drawing.Point(29, 69);
+            this.lblBuscarPor.Name = "lblBuscarPor";
+            this.lblBuscarPor.Size = new System.Drawing.Size(74, 16);
+            this.lblBuscarPor.TabIndex = 3;
+            this.lblBuscarPor.Text = "Buscar por:";
+            this.lblBuscarPor.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // cmbBuscarArticulo
+            // 
+            this.cmbBuscarArticulo.FormattingEnabled = true;
+            this.cmbBuscarArticulo.Location = new System.Drawing.Point(109, 68);
+            this.cmbBuscarArticulo.Name = "cmbBuscarArticulo";
+            this.cmbBuscarArticulo.Size = new System.Drawing.Size(104, 21);
+            this.cmbBuscarArticulo.TabIndex = 4;
+            // 
+            // txtBuscarArticulo
+            // 
+            this.txtBuscarArticulo.Location = new System.Drawing.Point(233, 68);
+            this.txtBuscarArticulo.Name = "txtBuscarArticulo";
+            this.txtBuscarArticulo.Size = new System.Drawing.Size(244, 20);
+            this.txtBuscarArticulo.TabIndex = 5;
+            // 
+            // btnBuscarArticulo
+            // 
+            this.btnBuscarArticulo.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(496, 66);
+            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarArticulo.TabIndex = 6;
+            this.btnBuscarArticulo.Text = "Buscar 🔍";
+            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnLimpiarFiltroArticulo
+            // 
+            this.btnLimpiarFiltroArticulo.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarFiltroArticulo.Location = new System.Drawing.Point(577, 66);
+            this.btnLimpiarFiltroArticulo.Name = "btnLimpiarFiltroArticulo";
+            this.btnLimpiarFiltroArticulo.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarFiltroArticulo.TabIndex = 7;
+            this.btnLimpiarFiltroArticulo.Text = "Limpiar filtro";
+            this.btnLimpiarFiltroArticulo.UseVisualStyleBackColor = true;
+            // 
+            // lstbArticulos
+            // 
+            this.lstbArticulos.FormattingEnabled = true;
+            this.lstbArticulos.Location = new System.Drawing.Point(32, 110);
+            this.lstbArticulos.Name = "lstbArticulos";
+            this.lstbArticulos.Size = new System.Drawing.Size(698, 238);
+            this.lstbArticulos.TabIndex = 8;
+            this.lstbArticulos.SelectedIndexChanged += new System.EventHandler(this.lstbArticulos_SelectedIndexChanged);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(382, 354);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "Agregar ➕";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(463, 354);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(86, 23);
+            this.btnModificar.TabIndex = 10;
+            this.btnModificar.Text = "Modificar ✏️";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(555, 354);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar ✖️";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // BtnVerDetalle
+            // 
+            this.BtnVerDetalle.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVerDetalle.Location = new System.Drawing.Point(636, 354);
+            this.BtnVerDetalle.Name = "BtnVerDetalle";
+            this.BtnVerDetalle.Size = new System.Drawing.Size(94, 23);
+            this.BtnVerDetalle.TabIndex = 12;
+            this.BtnVerDetalle.Text = "Ver Detalle 👁️";
+            this.BtnVerDetalle.UseVisualStyleBackColor = true;
+            // 
+            // pbxImagenProducto
+            // 
+            this.pbxImagenProducto.Location = new System.Drawing.Point(748, 110);
+            this.pbxImagenProducto.Name = "pbxImagenProducto";
+            this.pbxImagenProducto.Size = new System.Drawing.Size(307, 238);
+            this.pbxImagenProducto.TabIndex = 13;
+            this.pbxImagenProducto.TabStop = false;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Location = new System.Drawing.Point(815, 354);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 14;
+            this.btnAnterior.Text = "<<";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(905, 354);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 15;
+            this.btnSiguiente.Text = ">>";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // MainMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1067, 450);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.pbxImagenProducto);
+            this.Controls.Add(this.BtnVerDetalle);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.lstbArticulos);
+            this.Controls.Add(this.btnLimpiarFiltroArticulo);
+            this.Controls.Add(this.btnBuscarArticulo);
+            this.Controls.Add(this.txtBuscarArticulo);
+            this.Controls.Add(this.cmbBuscarArticulo);
+            this.Controls.Add(this.lblBuscarPor);
+            this.Controls.Add(this.lblBuscarPorNombre);
+            this.Controls.Add(this.mstMenuPrincipal);
+            this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu Principal";
+            this.mstMenuPrincipal.ResumeLayout(false);
+            this.mstMenuPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenProducto)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblBuscarPorNombre;
+        private System.Windows.Forms.MenuStrip mstMenuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem tlsArchivo;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tlsAdministrar;
+        private System.Windows.Forms.ToolStripMenuItem tlsMarcas;
+        private System.Windows.Forms.ToolStripMenuItem tlsCategorias;
+        private System.Windows.Forms.Label lblBuscarPor;
+        private System.Windows.Forms.ComboBox cmbBuscarArticulo;
+        private System.Windows.Forms.TextBox txtBuscarArticulo;
+        private System.Windows.Forms.Button btnBuscarArticulo;
+        private System.Windows.Forms.Button btnLimpiarFiltroArticulo;
+        private System.Windows.Forms.ListBox lstbArticulos;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button BtnVerDetalle;
+        private System.Windows.Forms.PictureBox pbxImagenProducto;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSiguiente;
+    }
+}
+
