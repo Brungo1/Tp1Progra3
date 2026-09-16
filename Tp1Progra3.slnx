@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="Dominio/Dominio.csproj" Id="a91cd93f-6e74-4306-ab0a-92d54a80f0b1" />
+  <Project Path="Negocio/Negocio.csproj" Id="18a17ec5-fcad-4e35-b758-1c6db86a88d2" />
   <Project Path="Tp1Progra3/Tp1Progra3.csproj" Id="4629673d-3ee2-4f0a-a374-98bc4140ae5b" />
 </Solution>

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+///using Dominio;
+///using Negocio;
 
 namespace Tp1Progra3
 {
@@ -58,6 +60,16 @@ namespace Tp1Progra3
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mstMenuPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

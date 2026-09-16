@@ -74,6 +74,7 @@
             this.mstMenuPrincipal.Size = new System.Drawing.Size(1067, 24);
             this.mstMenuPrincipal.TabIndex = 2;
             this.mstMenuPrincipal.Text = "menuStrip2";
+            this.mstMenuPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mstMenuPrincipal_ItemClicked);
             // 
             // tlsArchivo
             // 
@@ -87,7 +88,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // tlsAdministrar
@@ -102,13 +103,13 @@
             // tlsMarcas
             // 
             this.tlsMarcas.Name = "tlsMarcas";
-            this.tlsMarcas.Size = new System.Drawing.Size(180, 22);
+            this.tlsMarcas.Size = new System.Drawing.Size(130, 22);
             this.tlsMarcas.Text = "Marcas";
             // 
             // tlsCategorias
             // 
             this.tlsCategorias.Name = "tlsCategorias";
-            this.tlsCategorias.Size = new System.Drawing.Size(180, 22);
+            this.tlsCategorias.Size = new System.Drawing.Size(130, 22);
             this.tlsCategorias.Text = "Categorias";
             // 
             // lblBuscarPor
@@ -260,6 +261,7 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.mstMenuPrincipal.ResumeLayout(false);
             this.mstMenuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenProducto)).EndInit();
