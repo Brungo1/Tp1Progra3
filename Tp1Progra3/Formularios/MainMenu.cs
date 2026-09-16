@@ -7,16 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-///using Dominio;
-///using Negocio;
+using Dominio;
+using Negocio;
 
 namespace Tp1Progra3
 {
+
     public partial class MainMenu : Form
     {
+        private List<Articulo> listaArticulos;
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void CargarDatos()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                listaArticulos = negocio.Listar();
+
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos: " + ex.Message);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -66,12 +83,39 @@ namespace Tp1Progra3
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-
+            CargarDatos();
         }
 
         private void mstMenuPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+                try
+                {
+                    List<Imagen> listaImagenes = imagenNegocio.ListarPorArticulo(seleccionado.id);
+
+                    if (listaImagenes.Count > 0)
+                    {
+                        pbxImagenProducto.Load(listaImagenes[0].urlimagen);
+                    }
+                    else
+                    {
+                        pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                    }
+                }
+                catch (Exception)
+                {
+                    pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                }
+                
+            }
         }
     }
 }

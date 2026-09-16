@@ -40,7 +40,6 @@
             this.txtBuscarArticulo = new System.Windows.Forms.TextBox();
             this.btnBuscarArticulo = new System.Windows.Forms.Button();
             this.btnLimpiarFiltroArticulo = new System.Windows.Forms.Button();
-            this.lstbArticulos = new System.Windows.Forms.ListBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -48,8 +47,10 @@
             this.pbxImagenProducto = new System.Windows.Forms.PictureBox();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.mstMenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBuscarPorNombre
@@ -159,15 +160,6 @@
             this.btnLimpiarFiltroArticulo.Text = "Limpiar filtro";
             this.btnLimpiarFiltroArticulo.UseVisualStyleBackColor = true;
             // 
-            // lstbArticulos
-            // 
-            this.lstbArticulos.FormattingEnabled = true;
-            this.lstbArticulos.Location = new System.Drawing.Point(32, 110);
-            this.lstbArticulos.Name = "lstbArticulos";
-            this.lstbArticulos.Size = new System.Drawing.Size(698, 238);
-            this.lstbArticulos.TabIndex = 8;
-            this.lstbArticulos.SelectedIndexChanged += new System.EventHandler(this.lstbArticulos_SelectedIndexChanged);
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,6 +205,7 @@
             this.pbxImagenProducto.Location = new System.Drawing.Point(748, 110);
             this.pbxImagenProducto.Name = "pbxImagenProducto";
             this.pbxImagenProducto.Size = new System.Drawing.Size(307, 238);
+            this.pbxImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenProducto.TabIndex = 13;
             this.pbxImagenProducto.TabStop = false;
             // 
@@ -238,11 +231,22 @@
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dgvArticulos
+            // 
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Location = new System.Drawing.Point(10, 110);
+            this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArticulos.Size = new System.Drawing.Size(718, 238);
+            this.dgvArticulos.TabIndex = 16;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 450);
+            this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.pbxImagenProducto);
@@ -250,7 +254,6 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.lstbArticulos);
             this.Controls.Add(this.btnLimpiarFiltroArticulo);
             this.Controls.Add(this.btnBuscarArticulo);
             this.Controls.Add(this.txtBuscarArticulo);
@@ -265,6 +268,7 @@
             this.mstMenuPrincipal.ResumeLayout(false);
             this.mstMenuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +288,6 @@
         private System.Windows.Forms.TextBox txtBuscarArticulo;
         private System.Windows.Forms.Button btnBuscarArticulo;
         private System.Windows.Forms.Button btnLimpiarFiltroArticulo;
-        private System.Windows.Forms.ListBox lstbArticulos;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
@@ -292,6 +295,7 @@
         private System.Windows.Forms.PictureBox pbxImagenProducto;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.DataGridView dgvArticulos;
     }
 }
 

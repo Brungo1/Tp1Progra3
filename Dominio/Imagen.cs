@@ -9,7 +9,7 @@ namespace Dominio
     public class Imagen
     {
         private int _Id;
-        private Articulo _IdArticulo;
+        private int _IdArticulo;
         private string _UrlImagen;
 
         public int id
@@ -17,7 +17,7 @@ namespace Dominio
             get { return _Id; }
             set { _Id = value; }
         }
-        public Articulo idarticulo
+        public int idarticulo
         {
             get { return _IdArticulo; }
             set { _IdArticulo = value; }
