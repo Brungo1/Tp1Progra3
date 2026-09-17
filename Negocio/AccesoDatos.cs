@@ -64,7 +64,12 @@ namespace Negocio
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
-
+        public object EjecutarScalar()
+        {
+            comando.Connection = conexion;
+            conexion.Open();
+            return comando.ExecuteScalar();
+        }
         public void CerrarConexion()
         {
             if (lector != null)

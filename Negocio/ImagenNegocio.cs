@@ -40,5 +40,30 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+        public void Agregar(Imagen nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta(
+                    "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) " +
+                    "VALUES (@IdArticulo, @ImagenUrl)"
+                );
+
+                datos.SetearParametros("@IdArticulo", nueva.idarticulo);
+                datos.SetearParametros("@ImagenUrl", nueva.urlimagen);
+
+                datos.EjecutarConsulta();
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+
+
+
     }
 }

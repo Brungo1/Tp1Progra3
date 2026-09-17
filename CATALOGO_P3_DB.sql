@@ -103,4 +103,14 @@ insert into imagenes values
 (5, 'https://github.com/Brungo1/Tp1Progra3/blob/master/IMAGENES%20TP%20PROGRA/Appletv.png?raw=true')
 
 select * from ARTICULOS
+select * from CATEGORIAS
+
 select * from IMAGENES
+select * from CATEGORIAS
+
+insert into ARTICULOS (
+
+UPDATE ARTICULOS
+SET IdMarca = 5,
+    IdCategoria = 1
+WHERE Codigo = 'M03';

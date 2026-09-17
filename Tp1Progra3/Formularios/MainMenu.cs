@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using Tp1Progra3.Formularios;
 
 namespace Tp1Progra3
 {
@@ -116,6 +117,14 @@ namespace Tp1Progra3
                 }
                 
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo Ventana = new frmAltaArticulo();
+            Ventana.ShowDialog();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = negocio.Listar();
         }
     }
 }
