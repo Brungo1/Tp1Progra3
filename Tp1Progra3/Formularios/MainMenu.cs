@@ -16,6 +16,8 @@ namespace Tp1Progra3
 
     public partial class MainMenu : Form
     {
+        private List<Imagen> listaImagenesActuales;
+        private int indiceImagenActual = 0;
         private List<Articulo> listaArticulos;
         public MainMenu()
         {
@@ -37,49 +39,34 @@ namespace Tp1Progra3
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnAnterior_Click_1(object sender, EventArgs e)
         {
+            if (listaImagenesActuales != null && listaImagenesActuales.Count > 0)
+            {
+                indiceImagenActual++;
 
+                if (indiceImagenActual >= listaImagenesActuales.Count)
+                {
+                    indiceImagenActual = 0;
+                }
+
+                MostrarImagenActual();
+            }
         }
 
-        private void tlsArchivo_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
+            if (listaImagenesActuales != null && listaImagenesActuales.Count > 0)
+            {
+                indiceImagenActual--;
 
-        }
+                if (indiceImagenActual < 0)
+                {
+                    indiceImagenActual = listaImagenesActuales.Count - 1;
+                }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstbArticulos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+                MostrarImagenActual();
+            }
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -98,24 +85,12 @@ namespace Tp1Progra3
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 ImagenNegocio imagenNegocio = new ImagenNegocio();
 
-                try
-                {
-                    List<Imagen> listaImagenes = imagenNegocio.ListarPorArticulo(seleccionado.id);
 
-                    if (listaImagenes.Count > 0)
-                    {
-                        pbxImagenProducto.Load(listaImagenes[0].urlimagen);
-                    }
-                    else
-                    {
-                        pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-                    }
-                }
-                catch (Exception)
-                {
-                    pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-                }
-                
+                listaImagenesActuales = imagenNegocio.ListarPorArticulo(seleccionado.id);
+
+                indiceImagenActual = 0;
+
+                MostrarImagenActual();
             }
         }
 
@@ -126,5 +101,42 @@ namespace Tp1Progra3
             ArticuloNegocio negocio = new ArticuloNegocio();
             dgvArticulos.DataSource = negocio.Listar();
         }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                frmAltaImagen ventanaImagen = new frmAltaImagen(articuloSeleccionado);
+                ventanaImagen.ShowDialog();
+
+                CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un artículo de la lista primero.");
+            }
+        }
+
+        private void MostrarImagenActual()
+        {
+            try
+            {
+                if (listaImagenesActuales != null && listaImagenesActuales.Count > 0)
+                {
+                    pbxImagenProducto.Load(listaImagenesActuales[indiceImagenActual].urlimagen);
+                }
+                else
+                {
+                    pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                }
+            }
+            catch (Exception)
+            {
+                pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
     }
 }

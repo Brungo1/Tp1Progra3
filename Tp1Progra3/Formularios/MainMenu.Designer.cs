@@ -64,7 +64,6 @@
             this.lblBuscarPorNombre.TabIndex = 0;
             this.lblBuscarPorNombre.Text = "Busqueda y filtros:";
             this.lblBuscarPorNombre.UseCompatibleTextRendering = true;
-            this.lblBuscarPorNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // mstMenuPrincipal
             // 
@@ -85,12 +84,11 @@
             this.tlsArchivo.Name = "tlsArchivo";
             this.tlsArchivo.Size = new System.Drawing.Size(60, 20);
             this.tlsArchivo.Text = "Archivo";
-            this.tlsArchivo.Click += new System.EventHandler(this.tlsArchivo_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // tlsAdministrar
@@ -105,13 +103,13 @@
             // tlsMarcas
             // 
             this.tlsMarcas.Name = "tlsMarcas";
-            this.tlsMarcas.Size = new System.Drawing.Size(130, 22);
+            this.tlsMarcas.Size = new System.Drawing.Size(180, 22);
             this.tlsMarcas.Text = "Marcas";
             // 
             // tlsCategorias
             // 
             this.tlsCategorias.Name = "tlsCategorias";
-            this.tlsCategorias.Size = new System.Drawing.Size(130, 22);
+            this.tlsCategorias.Size = new System.Drawing.Size(180, 22);
             this.tlsCategorias.Text = "Categorias";
             // 
             // lblBuscarPor
@@ -123,7 +121,6 @@
             this.lblBuscarPor.Size = new System.Drawing.Size(74, 16);
             this.lblBuscarPor.TabIndex = 3;
             this.lblBuscarPor.Text = "Buscar por:";
-            this.lblBuscarPor.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // cmbBuscarArticulo
             // 
@@ -149,7 +146,6 @@
             this.btnBuscarArticulo.TabIndex = 6;
             this.btnBuscarArticulo.Text = "Buscar 🔍";
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
-            this.btnBuscarArticulo.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLimpiarFiltroArticulo
             // 
@@ -220,7 +216,7 @@
             this.btnAnterior.TabIndex = 14;
             this.btnAnterior.Text = "<<";
             this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click_1);
             // 
             // btnSiguiente
             // 
@@ -231,13 +227,19 @@
             this.btnSiguiente.TabIndex = 15;
             this.btnSiguiente.Text = ">>";
             this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.button2_Click);
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.AllowUserToAddRows = false;
+            this.dgvArticulos.AllowUserToDeleteRows = false;
+            this.dgvArticulos.AllowUserToResizeColumns = false;
+            this.dgvArticulos.AllowUserToResizeRows = false;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(10, 110);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(718, 238);
             this.dgvArticulos.TabIndex = 16;
@@ -252,6 +254,7 @@
             this.btnAgregarImagen.TabIndex = 17;
             this.btnAgregarImagen.Text = "Agregar Imagen ➕";
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
             // MainMenu
             // 
