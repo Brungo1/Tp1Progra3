@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -130,6 +130,41 @@ namespace Tp1Progra3
             catch (Exception)
             {
                 pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                DialogResult confirmacion = MessageBox.Show(
+                    "¿Está seguro que desea eliminar el artículo \"" + seleccionado.nombre + "\" y todas sus imágenes?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    ArticuloNegocio negocio = new ArticuloNegocio();
+
+                    try
+                    {
+                        negocio.Eliminar(seleccionado.id);
+                        MessageBox.Show("Artículo eliminado correctamente.");
+                        CargarDatos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un artículo de la lista primero.");
             }
         }
 

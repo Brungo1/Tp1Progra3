@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -82,6 +82,35 @@ namespace Negocio
             }
         }
 
+
+        public void Eliminar(int id)
+        {
+            AccesoDatos datosImagenes = new AccesoDatos();
+
+            try
+            {
+                datosImagenes.SetearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @Id");
+                datosImagenes.SetearParametros("@Id", id);
+                datosImagenes.EjecutarConsulta();
+            }
+            finally
+            {
+                datosImagenes.CerrarConexion();
+            }
+
+            AccesoDatos datosArticulo = new AccesoDatos();
+
+            try
+            {
+                datosArticulo.SetearConsulta("DELETE FROM ARTICULOS WHERE Id = @Id");
+                datosArticulo.SetearParametros("@Id", id);
+                datosArticulo.EjecutarConsulta();
+            }
+            finally
+            {
+                datosArticulo.CerrarConexion();
+            }
+        }
 
     }
 }
