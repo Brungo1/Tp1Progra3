@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
-using Tp1Progra3.Formularios;
+using TPWinForm_equipoD.Formularios;
 
-namespace Tp1Progra3
+namespace TPWinForm_equipoD
 {
 
     public partial class MainMenu : Form
@@ -186,5 +186,19 @@ namespace Tp1Progra3
             ventanaCategorias.Show();
         }
 
+        private void BtnVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                frmDetalleArticulo ventanaDetalle = new frmDetalleArticulo(articuloSeleccionado);
+                ventanaDetalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un artículo de la lista para ver su detalle.");
+            }
+        }
     }
 }

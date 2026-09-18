@@ -1,4 +1,4 @@
-namespace Tp1Progra3.Formularios
+namespace TPWinForm_equipoD.Formularios
 {
     partial class frmCategorias
     {
@@ -114,6 +114,7 @@ namespace Tp1Progra3.Formularios
             this.btnAgregarCategoria.TabIndex = 21;
             this.btnAgregarCategoria.Text = "Agregar ➕";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // mstMenuCategorias
             // 

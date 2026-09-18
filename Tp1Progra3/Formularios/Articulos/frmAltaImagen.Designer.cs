@@ -1,4 +1,4 @@
-﻿namespace Tp1Progra3
+﻿namespace TPWinForm_equipoD
 {
     partial class frmAltaImagen
     {
@@ -69,6 +69,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtUrlImagen);
             this.Name = "frmAltaImagen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaImagen";
             this.ResumeLayout(false);
             this.PerformLayout();

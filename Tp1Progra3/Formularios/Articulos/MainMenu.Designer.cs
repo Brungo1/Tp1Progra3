@@ -1,4 +1,4 @@
-namespace Tp1Progra3
+namespace TPWinForm_equipoD
 {
     partial class MainMenu
     {
@@ -75,6 +75,7 @@ namespace Tp1Progra3
             this.mstMenuPrincipal.Size = new System.Drawing.Size(1067, 24);
             this.mstMenuPrincipal.TabIndex = 2;
             this.mstMenuPrincipal.Text = "menuStrip2";
+            // 
             // tlsArchivo
             // 
             this.tlsArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -86,7 +87,7 @@ namespace Tp1Progra3
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // tlsAdministrar
@@ -101,14 +102,14 @@ namespace Tp1Progra3
             // tlsMarcas
             // 
             this.tlsMarcas.Name = "tlsMarcas";
-            this.tlsMarcas.Size = new System.Drawing.Size(180, 22);
+            this.tlsMarcas.Size = new System.Drawing.Size(130, 22);
             this.tlsMarcas.Text = "Marcas";
             this.tlsMarcas.Click += new System.EventHandler(this.tlsMarcas_Click);
             // 
             // tlsCategorias
             // 
             this.tlsCategorias.Name = "tlsCategorias";
-            this.tlsCategorias.Size = new System.Drawing.Size(180, 22);
+            this.tlsCategorias.Size = new System.Drawing.Size(130, 22);
             this.tlsCategorias.Text = "Categorias";
             this.tlsCategorias.Click += new System.EventHandler(this.tlsCategorias_Click);
             // 
@@ -198,6 +199,7 @@ namespace Tp1Progra3
             this.BtnVerDetalle.TabIndex = 12;
             this.BtnVerDetalle.Text = "Ver Detalle 👁️";
             this.BtnVerDetalle.UseVisualStyleBackColor = true;
+            this.BtnVerDetalle.Click += new System.EventHandler(this.BtnVerDetalle_Click);
             // 
             // pbxImagenProducto
             // 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Dominio;
 using Negocio;
 
-namespace Tp1Progra3.Formularios
+namespace TPWinForm_equipoD.Formularios
 {
     public partial class frmCategorias : Form
     {
@@ -96,5 +96,12 @@ namespace Tp1Progra3.Formularios
             {
                 CargarDatos();
             }
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            frmAltaCategoria frmAltaCategoria = new frmAltaCategoria();
+            frmAltaCategoria.ShowDialog();
+            CargarDatos();
+        }
     }
 }

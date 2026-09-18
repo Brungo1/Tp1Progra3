@@ -1,4 +1,4 @@
-namespace Tp1Progra3.Formularios
+namespace TPWinForm_equipoD.Formularios
 {
     partial class frmMarcas
     {
@@ -117,6 +117,7 @@ namespace Tp1Progra3.Formularios
             this.btnAgregarMarca.TabIndex = 10;
             this.btnAgregarMarca.Text = "Agregar ➕";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // btnModificarMarca
             // 

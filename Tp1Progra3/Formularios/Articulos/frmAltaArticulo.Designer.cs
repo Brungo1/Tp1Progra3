@@ -1,4 +1,4 @@
-﻿namespace Tp1Progra3.Formularios
+﻿namespace TPWinForm_equipoD.Formularios
 {
     partial class frmAltaArticulo
     {

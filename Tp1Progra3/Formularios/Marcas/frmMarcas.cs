@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Dominio;
 using Negocio;
 
-namespace Tp1Progra3.Formularios
+namespace TPWinForm_equipoD.Formularios
 {
     public partial class frmMarcas : Form
     {
@@ -93,6 +93,13 @@ namespace Tp1Progra3.Formularios
             {
                 Application.OpenForms["MainMenu"].Show();
             }
+        }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            frmAltaMarca frmAltaMarca = new frmAltaMarca();
+            frmAltaMarca.ShowDialog();
+            CargarDatos();
         }
     }
 }

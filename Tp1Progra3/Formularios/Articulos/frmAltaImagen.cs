@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Dominio;
 using Negocio;
 
-namespace Tp1Progra3
+namespace TPWinForm_equipoD
 {
     public partial class frmAltaImagen : Form
     {
@@ -19,7 +19,6 @@ namespace Tp1Progra3
         {
             InitializeComponent();
             this.articuloLocal = articuloSeleccionado;
-            MessageBox.Show("El ID recibido es: " + articuloLocal.id.ToString());
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
