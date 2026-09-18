@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +37,41 @@ namespace Tp1Progra3.Formularios
         private void frmMarcas_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void btnEliminarMarca_Click(object sender, EventArgs e)
+        {
+            if (dgvMarcas.CurrentRow != null)
+            {
+                Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                DialogResult confirmacion = MessageBox.Show(
+                    "¿Está seguro que desea eliminar la marca \"" + seleccionada.descripcion + "\"?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    MarcaNegocio negocio = new MarcaNegocio();
+
+                    try
+                    {
+                        negocio.Eliminar(seleccionada.id);
+                        MessageBox.Show("Marca eliminada correctamente.");
+                        CargarDatos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una marca de la lista primero.");
+            }
         }
 
         private void tlsCategorias_Click(object sender, EventArgs e)

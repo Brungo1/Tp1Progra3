@@ -1,4 +1,4 @@
-﻿namespace Tp1Progra3.Formularios
+namespace Tp1Progra3.Formularios
 {
     partial class frmMarcas
     {
@@ -137,6 +137,7 @@
             this.btnEliminarMarca.TabIndex = 12;
             this.btnEliminarMarca.Text = "Eliminar ✖️";
             this.btnEliminarMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
             // btnLimpiarFiltroMarca
             // 

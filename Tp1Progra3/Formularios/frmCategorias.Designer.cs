@@ -1,4 +1,4 @@
-﻿namespace Tp1Progra3.Formularios
+namespace Tp1Progra3.Formularios
 {
     partial class frmCategorias
     {
@@ -93,6 +93,7 @@
             this.btnEliminarCategoria.TabIndex = 23;
             this.btnEliminarCategoria.Text = "Eliminar ✖️";
             this.btnEliminarCategoria.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             // 
             // btnModificarCategoria
             // 

@@ -1,4 +1,4 @@
-﻿using Dominio;
+using Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +30,21 @@ namespace Negocio
                 }
 
                 return lista;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void Eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("DELETE FROM MARCAS WHERE Id = @Id");
+                datos.SetearParametros("@Id", id);
+                datos.EjecutarConsulta();
             }
             finally
             {

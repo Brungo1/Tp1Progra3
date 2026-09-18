@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +18,41 @@ namespace Tp1Progra3.Formularios
         public frmCategorias()
         {
             InitializeComponent();
+        }
+
+        private void btnEliminarCategoria_Click(object sender, EventArgs e)
+        {
+            if (dgvCategoria.CurrentRow != null)
+            {
+                Categoria seleccionada = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
+
+                DialogResult confirmacion = MessageBox.Show(
+                    "¿Está seguro que desea eliminar la categoría \"" + seleccionada.descripcion + "\"?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    CategoriaNegocio negocio = new CategoriaNegocio();
+
+                    try
+                    {
+                        negocio.Eliminar(seleccionada.id);
+                        MessageBox.Show("Categoría eliminada correctamente.");
+                        CargarDatos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una categoría de la lista primero.");
+            }
         }
 
         private void tlsArticulos_Click(object sender, EventArgs e)
