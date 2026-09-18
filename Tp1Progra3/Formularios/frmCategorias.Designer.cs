@@ -151,14 +151,14 @@
             // tlsArticulos
             // 
             this.tlsArticulos.Name = "tlsArticulos";
-            this.tlsArticulos.Size = new System.Drawing.Size(180, 22);
+            this.tlsArticulos.Size = new System.Drawing.Size(121, 22);
             this.tlsArticulos.Text = "Articulos";
             this.tlsArticulos.Click += new System.EventHandler(this.tlsArticulos_Click);
             // 
             // tlsMarcasC
             // 
             this.tlsMarcasC.Name = "tlsMarcasC";
-            this.tlsMarcasC.Size = new System.Drawing.Size(180, 22);
+            this.tlsMarcasC.Size = new System.Drawing.Size(121, 22);
             this.tlsMarcasC.Text = "Marcas";
             this.tlsMarcasC.Click += new System.EventHandler(this.tlsMarcasC_Click);
             // 
@@ -171,6 +171,7 @@
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.Location = new System.Drawing.Point(12, 119);
             this.dgvCategoria.Name = "dgvCategoria";
+            this.dgvCategoria.ReadOnly = true;
             this.dgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategoria.Size = new System.Drawing.Size(245, 275);
             this.dgvCategoria.TabIndex = 19;
