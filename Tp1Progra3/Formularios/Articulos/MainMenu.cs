@@ -16,6 +16,7 @@ namespace TPWinForm_equipoD
 
     public partial class MainMenu : Form
     {
+        
         private List<Imagen> listaImagenesActuales;
         private int indiceImagenActual = 0;
         private List<Articulo> listaArticulos;
@@ -198,6 +199,24 @@ namespace TPWinForm_equipoD
             else
             {
                 MessageBox.Show("Por favor, seleccione un artículo de la lista para ver su detalle.");
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado =
+                    (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                frmAltaArticulo ventana = new frmAltaArticulo(seleccionado);
+
+                ventana.ShowDialog(this);
+
+                ArticuloNegocio negocio = new ArticuloNegocio();
+
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = negocio.Listar();
             }
         }
     }

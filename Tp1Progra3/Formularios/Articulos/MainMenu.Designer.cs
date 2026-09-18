@@ -178,6 +178,7 @@ namespace TPWinForm_equipoD
             this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar ✏️";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -263,7 +264,7 @@ namespace TPWinForm_equipoD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 449);
             this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.btnSiguiente);

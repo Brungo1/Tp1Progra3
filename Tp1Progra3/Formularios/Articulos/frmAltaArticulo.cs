@@ -14,6 +14,12 @@ namespace TPWinForm_equipoD.Formularios
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo;
+        public frmAltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+        }
         private List<Imagen> listaImagenes = new List<Imagen>();
         public frmAltaArticulo()
         {
@@ -22,23 +28,30 @@ namespace TPWinForm_equipoD.Formularios
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo nuevo = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
 
             try
             {
-                nuevo.codigo = txtCodigo.Text;
-                nuevo.nombre = txtNombre.Text;
-                nuevo.descripcion = txtDescripcion.Text;
+                if (articulo == null)
+                    articulo = new Articulo();
 
-                nuevo.marca = (Marca)cboIdMarca.SelectedItem;
-                nuevo.categoria = (Categoria)cboIdCategoria.SelectedItem;
+                articulo.codigo = txtCodigo.Text;
+                articulo.nombre = txtNombre.Text;
+                articulo.descripcion = txtDescripcion.Text;
+                articulo.marca = (Marca)cboIdMarca.SelectedItem;
+                articulo.categoria = (Categoria)cboIdCategoria.SelectedItem;
+                articulo.precio = decimal.Parse(txtPrecio.Text);
 
-                nuevo.precio = decimal.Parse(txtPrecio.Text);
-
-                negocio.Agregar(nuevo);
-
-                MessageBox.Show("Artículo agregado correctamente");
+                if (articulo.id != 0)
+                {
+                    negocio.Modificar(articulo);
+                    MessageBox.Show("Artículo modificado correctamente");
+                }
+                else
+                {
+                    negocio.Agregar(articulo);
+                    MessageBox.Show("Artículo agregado correctamente");
+                }
 
                 Close();
             }
@@ -47,7 +60,7 @@ namespace TPWinForm_equipoD.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -56,7 +69,6 @@ namespace TPWinForm_equipoD.Formularios
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
-
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
@@ -70,8 +82,23 @@ namespace TPWinForm_equipoD.Formularios
                 cboIdCategoria.ValueMember = "id";
                 cboIdCategoria.DisplayMember = "descripcion";
 
-                cboIdMarca.SelectedIndex = 0;
-                cboIdCategoria.SelectedIndex = 0;
+                if (articulo != null)
+                {
+                    Text = "Modificar Artículo";
+
+                    txtCodigo.Text = articulo.codigo;
+                    txtNombre.Text = articulo.nombre;
+                    txtDescripcion.Text = articulo.descripcion;
+                    txtPrecio.Text = articulo.precio.ToString();
+
+                    cboIdMarca.SelectedValue = articulo.marca.id;
+                    cboIdCategoria.SelectedValue = articulo.categoria.id;
+                }
+                else
+                {
+                    cboIdMarca.SelectedIndex = 0;
+                    cboIdCategoria.SelectedIndex = 0;
+                }
             }
             catch (Exception ex)
             {

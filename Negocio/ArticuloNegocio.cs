@@ -8,8 +8,12 @@ namespace Negocio
 {
     using Dominio;
     using System.Collections.Generic;
+    using System.Net.Http;
+
     public class ArticuloNegocio
     {
+        
+      
         public List<Articulo> Listar()
         {
             List<Articulo> lista = new List<Articulo>();
@@ -109,6 +113,41 @@ namespace Negocio
             finally
             {
                 datosArticulo.CerrarConexion();
+            }
+        }
+
+        public  void Modificar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta(
+            "UPDATE ARTICULOS SET " +
+            "Codigo = @Codigo, " +
+            "Nombre = @Nombre, " +
+            "Descripcion = @Descripcion, " +
+            "IdMarca = @IdMarca, " +
+            "IdCategoria = @IdCategoria, " +
+            "Precio = @Precio " +
+            "WHERE Id = @Id");
+                datos.SetearParametros("@Codigo", articulo.codigo);
+                datos.SetearParametros("@Nombre", articulo.nombre);
+                datos.SetearParametros("@Descripcion", articulo.descripcion);
+                datos.SetearParametros("@IdMarca", articulo.marca.id);
+                datos.SetearParametros("@IdCategoria", articulo.categoria.id);
+                datos.SetearParametros("@Precio", articulo.precio);
+                datos.SetearParametros("@Id", articulo.id);
+
+                datos.EjecutarConsulta();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
             }
         }
 
