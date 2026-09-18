@@ -38,6 +38,10 @@ namespace Tp1Progra3
                 MessageBox.Show("Ocurrió un error al cargar los datos: " + ex.Message);
             }
         }
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
 
         private void btnAnterior_Click_1(object sender, EventArgs e)
         {
@@ -69,15 +73,6 @@ namespace Tp1Progra3
             }
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-            CargarDatos();
-        }
-
-        private void mstMenuPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvArticulos.CurrentRow != null)
@@ -136,6 +131,24 @@ namespace Tp1Progra3
             {
                 pbxImagenProducto.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
+        }
+
+        private void tlsMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcas ventanaMarcas = new frmMarcas();
+
+            this.Hide();
+
+            ventanaMarcas.Show();
+        }
+
+        private void tlsCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventanaCategorias = new frmCategorias();
+
+            this.Hide();
+
+            ventanaCategorias.Show();
         }
 
     }

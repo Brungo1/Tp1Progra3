@@ -7,14 +7,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace Tp1Progra3.Formularios
 {
     public partial class frmCategorias : Form
     {
+        private List<Categoria> listaCategorias;
         public frmCategorias()
         {
             InitializeComponent();
         }
+
+        private void tlsArticulos_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms["MainMenu"].Show();
+            this.Close();
+        }
+
+        private void tlsMarcasC_Click(object sender, EventArgs e)
+        {
+            
+            frmMarcas frmMarcas = new frmMarcas();
+            frmMarcas.Show();
+            this.Close();
+
+        }
+
+        private void frmCategorias_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms["frmMarcas"] == null)
+            {
+                Application.OpenForms["MainMenu"].Show();
+            }
+        }
+        private void CargarDatos()
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            try
+            {
+                listaCategorias = negocio.Listar();
+
+                dgvCategoria.DataSource = listaCategorias;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos: " + ex.Message);
+            }
+        }
+
+        private void frmCategorias_Load(object sender, EventArgs e)
+            {
+                CargarDatos();
+            }
     }
 }

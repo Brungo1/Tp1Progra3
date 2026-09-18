@@ -75,8 +75,6 @@
             this.mstMenuPrincipal.Size = new System.Drawing.Size(1067, 24);
             this.mstMenuPrincipal.TabIndex = 2;
             this.mstMenuPrincipal.Text = "menuStrip2";
-            this.mstMenuPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mstMenuPrincipal_ItemClicked);
-            // 
             // tlsArchivo
             // 
             this.tlsArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -105,12 +103,14 @@
             this.tlsMarcas.Name = "tlsMarcas";
             this.tlsMarcas.Size = new System.Drawing.Size(180, 22);
             this.tlsMarcas.Text = "Marcas";
+            this.tlsMarcas.Click += new System.EventHandler(this.tlsMarcas_Click);
             // 
             // tlsCategorias
             // 
             this.tlsCategorias.Name = "tlsCategorias";
             this.tlsCategorias.Size = new System.Drawing.Size(180, 22);
             this.tlsCategorias.Text = "Categorias";
+            this.tlsCategorias.Click += new System.EventHandler(this.tlsCategorias_Click);
             // 
             // lblBuscarPor
             // 
